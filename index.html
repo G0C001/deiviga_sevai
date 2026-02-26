@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>தெய்வீக ஆன்மீக சேவைகள்</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
+    
+    body{
+        font-family:'Noto Serif Tamil', serif;
+        background:linear-gradient(135deg,#1a1a2e,#16213e);
+        color:#f5f5f5;
+        overflow-x:hidden;
+    }
+    
+    /* NAVBAR */
+    nav{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        padding:18px;
+        background:rgba(0,0,0,0.5);
+    }
+    
+    nav h1{
+        font-size:22px;
+        color:#f8d66d;
+        text-align:center;
+    }
+    
+    /* HERO */
+    .hero{
+        min-height:85vh;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+        padding:20px;
+    }
+    
+    .hero h2{
+        font-size:28px;
+        margin-bottom:18px;
+        color:#f8d66d;
+    }
+    
+    .hero p{
+        width:100%;
+        max-width:700px;
+        line-height:1.8;
+        opacity:0.9;
+        font-size:16px;
+    }
+    
+    .hero button{
+        margin-top:25px;
+        padding:12px 28px;
+        border:none;
+        border-radius:30px;
+        background:#f8d66d;
+        color:#000;
+        font-weight:600;
+        cursor:pointer;
+        font-size:15px;
+    }
+    
+    /* TRUST */
+    .trust{
+        padding:50px 20px;
+        text-align:center;
+    }
+    
+    .trust h3{
+        margin-bottom:18px;
+        color:#f8d66d;
+        font-size:20px;
+    }
+    
+    .trust p{
+        max-width:800px;
+        margin:auto;
+        line-height:1.8;
+        font-size:15px;
+    }
+    
+    /* SERVICES */
+    .services{
+        padding:60px 20px;
+        text-align:center;
+    }
+    
+    .services h2{
+        margin-bottom:40px;
+        color:#f8d66d;
+        font-size:24px;
+    }
+    
+    .service-grid{
+        display:grid;
+        grid-template-columns:1fr;   /* Mobile first */
+        gap:25px;
+    }
+    
+    .card{
+        background:rgba(255,255,255,0.06);
+        padding:20px;
+        border-radius:15px;
+        transition:0.3s;
+        overflow:hidden;
+    }
+    
+    .card:hover{
+        transform:translateY(-6px);
+    }
+    
+    .card-img{
+        width:100%;
+        height:180px;
+        object-fit:cover;
+        border-radius:12px;
+        margin-bottom:15px;
+        transition:0.3s;
+    }
+    
+    .card:hover .card-img{
+        transform:scale(1.05);
+    }
+    
+    .card h3{
+        margin-bottom:10px;
+        color:#f8d66d;
+        font-size:18px;
+    }
+    
+    .card p{
+        font-size:14px;
+        line-height:1.6;
+    }
+    
+    /* CONTACT */
+    .contact{
+        padding:60px 20px;
+        text-align:center;
+        background:rgba(0,0,0,0.5);
+    }
+    
+    .contact h2{
+        margin-bottom:20px;
+        color:#f8d66d;
+        font-size:22px;
+    }
+    
+    .contact input,
+    .contact textarea{
+        width:100%;
+        max-width:600px;
+        padding:12px;
+        margin:10px 0;
+        border-radius:8px;
+        border:none;
+        outline:none;
+        font-family:'Poppins',sans-serif;
+    }
+    
+    .contact button{
+        padding:12px 30px;
+        border:none;
+        border-radius:30px;
+        background:#f8d66d;
+        color:#000;
+        font-weight:600;
+        cursor:pointer;
+        margin-top:10px;
+    }
+    .instagram-btn{
+    margin-top:20px;
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    padding:14px 26px;
+    border-radius:35px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:15px;
+    color:#fff;
+    background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af);
+    box-shadow:0 6px 18px rgba(0,0,0,0.4);
+    transition:transform 0.3s, box-shadow 0.3s;
+}
+
+.instagram-btn img{
+    width:24px;
+    height:24px;
+}
+
+.instagram-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.6);
+}
+    
+    /* FOOTER */
+    footer{
+        padding:18px;
+        text-align:center;
+        background:#111;
+        font-size:13px;
+    }
+    
+    /* ===== TABLET ===== */
+    @media(min-width:768px){
+        nav h1{
+            font-size:26px;
+        }
+    
+        .hero h2{
+            font-size:34px;
+        }
+    
+        .hero p{
+            font-size:17px;
+        }
+    
+        .service-grid{
+            grid-template-columns:repeat(2,1fr);
+        }
+    }
+    
+    /* ===== LAPTOP / DESKTOP ===== */
+    @media(min-width:1024px){
+        .service-grid{
+            grid-template-columns:repeat(3,1fr);
+        }
+    
+        .hero{
+            min-height:75vh;
+        }
+    }
+    </style>
+    
+</head>
+<body>
+
+<nav>
+    <h1>தெய்வீக ஆன்மீக சேவைகள்</h1>
+</nav>
+
+<section class="hero">
+    <h2>100% ரகசியம் மற்றும் நம்பிக்கை</h2>
+    <p>
+        உங்கள் தனிப்பட்ட விவரங்கள் முழுமையாக பாதுகாக்கப்படும். 
+        அனுபவமுள்ள ஆன்மீக ஆலோசகரால் வழிகாட்டுதல் வழங்கப்படும். 
+        நம்பகமான மற்றும் ஒழுக்கமான முறையில் சேவைகள் வழங்கப்படுகின்றன.
+    </p>
+    <button onclick="scrollToServices()">எங்கள் சேவைகள்</button>
+</section>
+
+
+<section class="services" id="services">
+    <h2>எங்கள் சேவைகள்</h2>
+
+    <div class="service-grid">
+
+        <div class="card">
+            <img src="love.jpg" alt="வசியம்" class="card-img">
+            <h3>வசியம் ஆன்மீக வழிபாடு</h3>
+            <p>
+                குடும்ப உறவு, காதல் அல்லது திருமண வாழ்வில் புரிதல் குறைவு இருப்பின், 
+                ஆன்மீக முறைப்படி மன அமைதி மற்றும் நல்லிணக்கம் ஏற்பட வழிகாட்டுதல் வழங்கப்படுகிறது. 
+                அனுபவமிக்க ஆன்மீக ஆலோசனையின் மூலம் நேர்மறை மாற்றத்தை பெற உதவப்படுகிறது.
+            </p>
+        </div>
+
+        <div class="card">
+            <img src="breakup.jpg" alt="வசியம்" class="card-img">
+            <h3>தவறான உறவு பிரிவு ஆலோசனை</h3>
+            <p>
+                உங்கள் வாழ்க்கையில் பாதிப்பை ஏற்படுத்தும் தவறான உறவுகளிலிருந்து விடுபட 
+                ஆன்மீக வழிகாட்டுதல் வழங்கப்படுகிறது. மன அமைதி மற்றும் நல்ல எதிர்காலத்திற்காக 
+                பாதுகாப்பான முறையில் பிரச்சனையை சமாளிக்க உதவுகிறோம்.
+            </p>
+        </div>
+
+        <div class="card">
+            <img src="VasiyaMai.jpg" alt="வசியம்" class="card-img">
+            <h3>வெற்றிலை மை மூலம் இழந்த பொருள் கண்டறிதல்</h3>
+            <p>
+                மாயமான பணம், நகை அல்லது முக்கிய பொருட்கள் தொடர்பான சந்தேகங்களுக்கு 
+                பாரம்பரிய ஆன்மீக முறையான "வெற்றிலை மை" மூலம் வழிகாட்டுதல் வழங்கப்படுகிறது. 
+                உண்மை நிலையை அறிந்து கொள்ள ஆன்மீக ஆலோசனை அளிக்கப்படுகிறது.
+            </p>
+        </div>
+
+        <div class="card">
+            <img src="VasiyaMai.jpg" alt="வசியம்" class="card-img">
+            <h3>மாயமான நபர் தொடர்பான ஆன்மீக வழிகாட்டுதல்</h3>
+            <p>
+                தொடர்பு துண்டிக்கப்பட்ட அல்லது காணாமல் போன நபர் குறித்து 
+                பாரம்பரிய ஆன்மீக முறையில் "வெற்றிலை மை" மூலம் தகவல் அறியும் முயற்சி செய்யப்படுகிறது. 
+                குடும்பத்தினருக்கு மன அமைதி பெற வழிகாட்டுதல் வழங்கப்படுகிறது.
+            </p>
+        </div>
+
+        <div class="card">
+            <img src="money.jpg" alt="வசியம்" class="card-img">
+            <h3>வியாபார வளர்ச்சி மற்றும் முன்னேற்ற பூஜை</h3>
+            <p>
+                வியாபாரத்தில் நஷ்டம், தடைகள் அல்லது வளர்ச்சி குறைவு இருந்தால் 
+                ஆன்மீக முறையில் நேர்மறை சக்தியை அதிகரித்து முன்னேற்றம் பெற வழிகாட்டுதல் வழங்கப்படுகிறது. 
+                வளமும் முன்னேற்றமும் பெற அனுபவமிக்க ஆலோசனை அளிக்கப்படுகிறது.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section class="contact">
+    <h2>ரகசிய ஆலோசனைக்கு Instagram மூலம் தொடர்பு கொள்ளுங்கள்</h2>
+
+    <a href="https://www.instagram.com/deiviga_sevai?igsh=dDhxNjdnOHZoYWpl"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="instagram-btn">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+        Instagram-ல் Chat செய்யுங்கள்
+    </a>
+</section>
+
+<footer>
+    © 2026 தெய்வீக ஆன்மீக சேவைகள் | அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை
+</footer>
+
+<script>
+function scrollToServices(){
+    document.getElementById("services").scrollIntoView({behavior:"smooth"});
+}
+</script>
+
+</body>
+</html>
