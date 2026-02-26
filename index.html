@@ -14,29 +14,37 @@
         box-sizing:border-box;
     }
     
+    /* ===== COLOR VARIABLES ===== */
+    :root{
+        --green:#0f3d2e;
+        --green-light:#1f6f54;
+        --yellow:#f5d547;
+        --rose:#e75480;
+        --white:#ffffff;
+    }
+    
+    /* ===== BODY ===== */
     body{
         font-family:'Noto Serif Tamil', serif;
-        background:linear-gradient(135deg,#1a1a2e,#16213e);
-        color:#f5f5f5;
+        background:linear-gradient(135deg,var(--green),var(--green-light));
+        color:var(--white);
         overflow-x:hidden;
     }
     
-    /* NAVBAR */
+    /* ===== NAVBAR ===== */
     nav{
         display:flex;
         justify-content:center;
         align-items:center;
-        padding:18px;
-        background:rgba(0,0,0,0.5);
+        background:rgba(15,61,46,0.9);
     }
     
     nav h1{
-        font-size:22px;
-        color:#f8d66d;
-        text-align:center;
+        font-size:25px;
+        color:var(--yellow);
     }
     
-    /* HERO */
+    /* ===== HERO ===== */
     .hero{
         min-height:85vh;
         display:flex;
@@ -50,14 +58,12 @@
     .hero h2{
         font-size:28px;
         margin-bottom:18px;
-        color:#f8d66d;
+        color:var(--yellow);
     }
     
     .hero p{
-        width:100%;
         max-width:700px;
         line-height:1.8;
-        opacity:0.9;
         font-size:16px;
     }
     
@@ -66,33 +72,19 @@
         padding:12px 28px;
         border:none;
         border-radius:30px;
-        background:#f8d66d;
-        color:#000;
+        background:var(--yellow);
+        color:var(--green);
         font-weight:600;
         cursor:pointer;
-        font-size:15px;
+        transition:0.3s;
     }
     
-    /* TRUST */
-    .trust{
-        padding:50px 20px;
-        text-align:center;
+    .hero button:hover{
+        background:var(--rose);
+        color:var(--white);
     }
     
-    .trust h3{
-        margin-bottom:18px;
-        color:#f8d66d;
-        font-size:20px;
-    }
-    
-    .trust p{
-        max-width:800px;
-        margin:auto;
-        line-height:1.8;
-        font-size:15px;
-    }
-    
-    /* SERVICES */
+    /* ===== SERVICES ===== */
     .services{
         padding:60px 20px;
         text-align:center;
@@ -100,149 +92,102 @@
     
     .services h2{
         margin-bottom:40px;
-        color:#f8d66d;
+        color:var(--yellow);
         font-size:24px;
     }
     
     .service-grid{
         display:grid;
-        grid-template-columns:1fr;   /* Mobile first */
+        grid-template-columns:1fr;
         gap:25px;
     }
     
     .card{
-        background:rgba(255,255,255,0.06);
+        background:rgba(255,255,255,0.08);
         padding:20px;
-        border-radius:15px;
+        border-radius:18px;
         transition:0.3s;
-        overflow:hidden;
     }
     
     .card:hover{
         transform:translateY(-6px);
+        border:1px solid var(--rose);
     }
     
     .card-img{
         width:100%;
         height:180px;
         object-fit:cover;
-        border-radius:12px;
+        border-radius:14px;
         margin-bottom:15px;
-        transition:0.3s;
-    }
-    
-    .card:hover .card-img{
-        transform:scale(1.05);
     }
     
     .card h3{
         margin-bottom:10px;
-        color:#f8d66d;
+        color:var(--yellow);
         font-size:18px;
     }
     
     .card p{
         font-size:14px;
-        line-height:1.6;
+        line-height:1.7;
     }
     
-    /* CONTACT */
+    /* ===== CONTACT ===== */
     .contact{
         padding:60px 20px;
         text-align:center;
-        background:rgba(0,0,0,0.5);
+        background:rgba(15,61,46,0.95);
     }
     
     .contact h2{
-        margin-bottom:20px;
-        color:#f8d66d;
+        margin-bottom:25px;
+        color:var(--yellow);
         font-size:22px;
     }
     
-    .contact input,
-    .contact textarea{
-        width:100%;
-        max-width:600px;
-        padding:12px;
-        margin:10px 0;
-        border-radius:8px;
-        border:none;
-        outline:none;
-        font-family:'Poppins',sans-serif;
-    }
-    
-    .contact button{
-        padding:12px 30px;
-        border:none;
-        border-radius:30px;
-        background:#f8d66d;
-        color:#000;
-        font-weight:600;
-        cursor:pointer;
-        margin-top:10px;
-    }
     .instagram-btn{
-    margin-top:20px;
-    display:inline-flex;
-    align-items:center;
-    gap:12px;
-    padding:14px 26px;
-    border-radius:35px;
-    text-decoration:none;
-    font-weight:600;
-    font-size:15px;
-    color:#fff;
-    background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af);
-    box-shadow:0 6px 18px rgba(0,0,0,0.4);
-    transition:transform 0.3s, box-shadow 0.3s;
-}
-
-.instagram-btn img{
-    width:24px;
-    height:24px;
-}
-
-.instagram-btn:hover{
-    transform:translateY(-3px);
-    box-shadow:0 10px 25px rgba(0,0,0,0.6);
-}
+        display:inline-flex;
+        align-items:center;
+        gap:12px;
+        padding:14px 26px;
+        border-radius:35px;
+        text-decoration:none;
+        font-weight:600;
+        font-size:15px;
+        color:var(--white);
+        background:linear-gradient(45deg,var(--rose),var(--yellow));
+        box-shadow:0 6px 18px rgba(0,0,0,0.3);
+        transition:0.3s;
+    }
     
-    /* FOOTER */
+    .instagram-btn img{
+        width:24px;
+        height:24px;
+    }
+    
+    .instagram-btn:hover{
+        transform:translateY(-4px);
+    }
+    
+    /* ===== FOOTER ===== */
     footer{
         padding:18px;
         text-align:center;
-        background:#111;
+        background:var(--green);
         font-size:13px;
     }
     
-    /* ===== TABLET ===== */
+    /* ===== RESPONSIVE ===== */
     @media(min-width:768px){
-        nav h1{
-            font-size:26px;
-        }
-    
-        .hero h2{
-            font-size:34px;
-        }
-    
-        .hero p{
-            font-size:17px;
-        }
-    
-        .service-grid{
-            grid-template-columns:repeat(2,1fr);
-        }
+        nav h1{font-size:26px;}
+        .hero h2{font-size:34px;}
+        .service-grid{grid-template-columns:repeat(2,1fr);}
     }
     
-    /* ===== LAPTOP / DESKTOP ===== */
     @media(min-width:1024px){
-        .service-grid{
-            grid-template-columns:repeat(3,1fr);
-        }
-    
-        .hero{
-            min-height:75vh;
-        }
+        .service-grid{grid-template-columns:repeat(3,1fr);}
+        .hero{min-height:75vh;}
     }
     </style>
     
@@ -250,14 +195,14 @@
 <body>
 
 <nav>
-    <h1>தெய்வீக ஆன்மீக சேவைகள்</h1>
+    <h1 style="font-size:60px;">ﷲ</h1>
 </nav>
 
 <section class="hero">
-    <h2>100% ரகசியம் மற்றும் நம்பிக்கை</h2>
+    <h2>வாழ்க்கை பிரச்சனை தீர்வு மையம்</h2>
     <p>
         உங்கள் தனிப்பட்ட விவரங்கள் முழுமையாக பாதுகாக்கப்படும். 
-        அனுபவமுள்ள ஆன்மீக ஆலோசகரால் வழிகாட்டுதல் வழங்கப்படும். 
+        அனுபவமுள்ள ஆலோசகரால் வழிகாட்டுதல் வழங்கப்படும். 
         நம்பகமான மற்றும் ஒழுக்கமான முறையில் சேவைகள் வழங்கப்படுகின்றன.
     </p>
     <button onclick="scrollToServices()">எங்கள் சேவைகள்</button>
@@ -270,52 +215,69 @@
     <div class="service-grid">
 
         <div class="card">
-            <img src="love.jpg" alt="வசியம்" class="card-img">
-            <h3>வசியம் ஆன்மீக வழிபாடு</h3>
+            <img src="love.jpg" alt="காதல் பிரச்சனை" class="card-img">
+            <h3>காதல் வாழ்க்கை பிரச்சனை சரி செய்தல்</h3>
             <p>
-                குடும்ப உறவு, காதல் அல்லது திருமண வாழ்வில் புரிதல் குறைவு இருப்பின், 
-                ஆன்மீக முறைப்படி மன அமைதி மற்றும் நல்லிணக்கம் ஏற்பட வழிகாட்டுதல் வழங்கப்படுகிறது. 
-                அனுபவமிக்க ஆன்மீக ஆலோசனையின் மூலம் நேர்மறை மாற்றத்தை பெற உதவப்படுகிறது.
+                காதல் வாழ்க்கையில் ஏற்படும் பிரச்சனைகள், கருத்து வேறுபாடுகள்,
+                திருமண தடை, பிள்ளைகள் சொல் பேச்சு கேட்காமல் இருப்பது,
+                குடும்ப உறவு, காதல் மற்றும் திருமண வாழ்க்கையில்
+                நல்ல புரிதல் மற்றும் அமைதி ஏற்பட உதவி செய்யப்படுகிறது.
             </p>
         </div>
 
         <div class="card">
-            <img src="breakup.jpg" alt="வசியம்" class="card-img">
-            <h3>தவறான உறவு பிரிவு ஆலோசனை</h3>
+            <img src="breakup.jpg" alt="குடும்ப பிரச்சனை" class="card-img">
+            <h3>குடும்ப பிரச்சனை சரி செய்தல்</h3>
             <p>
-                உங்கள் வாழ்க்கையில் பாதிப்பை ஏற்படுத்தும் தவறான உறவுகளிலிருந்து விடுபட 
-                ஆன்மீக வழிகாட்டுதல் வழங்கப்படுகிறது. மன அமைதி மற்றும் நல்ல எதிர்காலத்திற்காக 
-                பாதுகாப்பான முறையில் பிரச்சனையை சமாளிக்க உதவுகிறோம்.
+                குடும்பத்தில் ஏற்படும் சண்டை, மனஸ்தாபம்,
+                கருத்து வேறுபாடு மற்றும் உறவினர்களுக்கிடையிலான
+                பிரச்சனைகளுக்கு தீர்வு காண உதவி செய்யப்படுகிறது.
+                குடும்பத்தில் அமைதி மற்றும் நல்லிணக்கம்
+                ஏற்பட வழிகாட்டுதல் வழங்கப்படுகிறது.
             </p>
         </div>
 
         <div class="card">
-            <img src="VasiyaMai.jpg" alt="வசியம்" class="card-img">
-            <h3>வெற்றிலை மை மூலம் இழந்த பொருள் கண்டறிதல்</h3>
+            <img src="VasiyaMai.jpg" alt="காணாமல் போன நபர்" class="card-img">
+            <h3>மாயமான நபரை கண்டுபிடித்தல்</h3>
             <p>
-                மாயமான பணம், நகை அல்லது முக்கிய பொருட்கள் தொடர்பான சந்தேகங்களுக்கு 
-                பாரம்பரிய ஆன்மீக முறையான "வெற்றிலை மை" மூலம் வழிகாட்டுதல் வழங்கப்படுகிறது. 
-                உண்மை நிலையை அறிந்து கொள்ள ஆன்மீக ஆலோசனை அளிக்கப்படுகிறது.
+                தொடர்பு துண்டிக்கப்பட்ட அல்லது காணாமல் போன
+                நபர் குறித்து தகவல் அறிய முயற்சி செய்யப்படுகிறது.
+                குடும்பத்தினரின் மனஅமைதிக்காக
+                தேவையான வழிகாட்டுதல் வழங்கப்படுகிறது.
             </p>
         </div>
 
         <div class="card">
-            <img src="VasiyaMai.jpg" alt="வசியம்" class="card-img">
-            <h3>மாயமான நபர் தொடர்பான ஆன்மீக வழிகாட்டுதல்</h3>
+            <img src="missed.png" alt="இழந்த பொருள்" class="card-img">
+            <h3>காணாமல் போன பொருளை கண்டுபிடித்தல்</h3>
             <p>
-                தொடர்பு துண்டிக்கப்பட்ட அல்லது காணாமல் போன நபர் குறித்து 
-                பாரம்பரிய ஆன்மீக முறையில் "வெற்றிலை மை" மூலம் தகவல் அறியும் முயற்சி செய்யப்படுகிறது. 
-                குடும்பத்தினருக்கு மன அமைதி பெற வழிகாட்டுதல் வழங்கப்படுகிறது.
+                காணாமல் போன பணம், நகை அல்லது முக்கியமான
+                பொருட்கள் குறித்து தகவல் அறிய உதவி செய்யப்படுகிறது.
+                சந்தேகங்களை தெளிவுபடுத்தி,
+                உண்மை நிலையை புரிந்து கொள்ள வழிகாட்டுதல் வழங்கப்படுகிறது.
             </p>
         </div>
 
         <div class="card">
-            <img src="money.jpg" alt="வசியம்" class="card-img">
-            <h3>வியாபார வளர்ச்சி மற்றும் முன்னேற்ற பூஜை</h3>
+            <img src="money.jpg" alt="வியாபார வளர்ச்சி" class="card-img">
+            <h3>வியாபார வளர்ச்சி மற்றும் முன்னேற்றம்</h3>
             <p>
-                வியாபாரத்தில் நஷ்டம், தடைகள் அல்லது வளர்ச்சி குறைவு இருந்தால் 
-                ஆன்மீக முறையில் நேர்மறை சக்தியை அதிகரித்து முன்னேற்றம் பெற வழிகாட்டுதல் வழங்கப்படுகிறது. 
-                வளமும் முன்னேற்றமும் பெற அனுபவமிக்க ஆலோசனை அளிக்கப்படுகிறது.
+                வியாபாரத்தில் ஏற்படும் நஷ்டம், தடைகள்,
+                வளர்ச்சி குறைவு போன்ற பிரச்சனைகளை
+                சரி செய்ய உதவி வழங்கப்படுகிறது.
+                வியாபாரம் நிலைத்த வளர்ச்சி அடைய
+                சரியான ஆலோசனை வழங்கப்படுகிறது.
+            </p>
+        </div>
+
+        <div class="card">
+            <img src="black.png" alt="வியாபார வளர்ச்சி" class="card-img">
+            <h3>பில்லி, சூனியம், ஏவல்</h3>
+            <p>
+                பில்லி, சூனியம், ஏவல் போன்ற பிரச்சனைகளை சரி செய்ய உதவி வழங்கப்படுகிறது.
+                எதிரிகளால் ஏற்படும் தொல்லைகள் மற்றும் அனைத்து விதமான
+                தனிப்பட்ட பிரச்சனைகளுக்கும் சரியான வழிகாட்டுதல் வழங்கப்படுகிறது.
             </p>
         </div>
 
@@ -324,7 +286,7 @@
 
 <section class="contact">
     <h2>ரகசிய ஆலோசனைக்கு Instagram மூலம் தொடர்பு கொள்ளுங்கள்</h2>
-
+    <h2 style="color: azure;">70 வருடம் பாரம்பரியமாக செய்து கொண்டிருக்கிறோம்...</h2>
     <a href="https://www.instagram.com/deiviga_sevai?igsh=dDhxNjdnOHZoYWpl"
        target="_blank"
        rel="noopener noreferrer"
@@ -335,7 +297,7 @@
 </section>
 
 <footer>
-    © 2026 தெய்வீக ஆன்மீக சேவைகள் | அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை
+    © 2026 | அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை
 </footer>
 
 <script>
